@@ -2,16 +2,18 @@
 
 {% block content %}
 
-<h2>Create Post</h2>
+<div class="form-card">
+    <h2>Create New Post</h2>
 
-<form method="POST">
-    {% csrf_token %}
+    <form method="POST" class="form">
+        {% csrf_token %}
 
-    <input type="text" name="title" placeholder="Title" required><br><br>
+        <input type="text" name="title" placeholder="Title" required>
 
-    <textarea name="content" placeholder="Write something..." required></textarea><br><br>
+        <textarea name="content" placeholder="Write something..." required></textarea>
 
-    <button type="submit">Publish</button>
-</form>
+        <button type="submit" class="btn-primary">Publish</button>
+    </form>
+</div>
 
 {% endblock %}

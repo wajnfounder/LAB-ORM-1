@@ -3,28 +3,31 @@
 <html>
 <head>
     <title>Blogger</title>
-
     <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
 
 <!-- NAVBAR -->
-<div class="navbar">
-    <h2>Blogger</h2>
-    <a href="{% url 'blog:home' %}">Home</a>
-    <a href="{% url 'blog:create_post' %}">Create</a>
-</div>
+<header class="navbar">
+    <div class="nav-container">
+        <h2 class="logo">Blogger</h2>
+
+        <div class="nav-links">
+            <a href="{% url 'blog:home' %}">Home</a>
+            <a href="{% url 'blog:create_post' %}" class="btn-primary">Create</a>
+        </div>
+    </div>
+</header>
 
 <!-- CONTENT -->
-<div class="container">
-    {% block content %}
-    {% endblock %}
-</div>
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
 
 <!-- FOOTER -->
-<div class="footer">
+<footer class="footer">
     <p>© 2026 Blogger</p>
-</div>
+</footer>
 
 </body>
 </html>

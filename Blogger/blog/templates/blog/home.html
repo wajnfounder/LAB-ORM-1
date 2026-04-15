@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+<h2>Latest Posts</h2>
+
+{% for post in posts %}
+<div class="card">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <small>{{ post.published_at }}</small>
+
+    <div class="actions">
+        <a href="{% url 'blog:edit_post' post.id %}" class="btn-edit">Edit</a>
+        <a href="{% url 'blog:delete_post' post.id %}" class="btn-delete">Delete</a>
+    </div>
+</div>
+
+<a href="{% url 'blog:create_post' %}" class="btn-primary">
+        + Create New Post
+    </a>
+</div>
+
+
+    
+</div>
+{% empty %}
+<p>No posts yet</p>
+{% endfor %}
+
+{% endblock %}

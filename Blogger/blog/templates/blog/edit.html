@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+<div class="form-card">
+
+    <h2>Edit Post</h2>
+
+    <form method="POST" class="form">
+        {% csrf_token %}
+
+        <input type="text" name="title" value="{{ post.title }}" required>
+
+        <textarea name="content" required>{{ post.content }}</textarea>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Update</button>
+
+            <a href="{% url 'blog:post_detail' post.id %}" class="btn-cancel">
+                Cancel
+            </a>
+        </div>
+
+    </form>
+</div>
+
+{% endblock %}
